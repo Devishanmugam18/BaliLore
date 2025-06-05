@@ -20,3 +20,21 @@ export default function Footer() {
     );
   }
   
+
+
+// export default function Footer() {
+//   return (
+//     <footer className="footer">
+//       <div className="footer-inner">
+//         <nav className="footer-nav">
+//           <a href="/" className="footer-link">Home</a>
+//           <a href="/stories" className="footer-link">Stories</a>
+//           <a href="/submit" className="footer-link">Submit</a>
+//         </nav>
+//         <p className="footer-copy">
+//           © {new Date().getFullYear()} BaliLore.com — All rights reserved.
+//         </p>
+//       </div>
+//     </footer>
+//   );
+// }
