@@ -1,3 +1,4 @@
+import './storyGrid.css'; 
 
 import img1 from "../assets/img1.jpg"; 
 import img2 from "../assets/img2.jpg";
@@ -42,35 +43,57 @@ const stories = [
         image: img6,
         snippet: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod.",
     },
-  ]
-  export default function StoryGrid() {
-    return (
-      <section className="p-6">
-        <h2 className="text-2xl font-headline text-coral mb-6">Featured Stories</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {stories.map((story) => (
-            <div
-              key={story.id}
-              className="bg-white rounded-2xl shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg group"
-            >
-              <img
-                src={story.image}
-                alt={story.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="font-headline text-lg text-charcoal mb-2">{story.title}</h3>
-                <p className="text-sm text-gray-700 font-body">
-                  {story.snippet}
-                </p>
-                <div className="text-coral mt-3 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold cursor-pointer">
-                  Read More →
-                </div>
-              </div>
+]  
+
+export default function StoryGrid() {
+  return (
+    <section className="story-section">
+      <h2 className="story-heading">Featured Stories</h2>
+      <div className="story-grid">
+        {stories.map((story) => (
+          <div key={story.id} className="story-card">
+            <img src={story.image} alt={story.title} className="story-image" />
+            <div className="story-content">
+              <h3 className="story-title">{story.title}</h3>
+              <p className="story-snippet">{story.snippet}</p>
+              <div className="story-readmore">Read More →</div>
             </div>
-          ))}
-        </div>
-      </section>
-    );
-  }
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
+  // export default function StoryGrid() {
+  //   return (
+  //     <section className="p-6">
+  //       <h2 className="text-2xl font-headline text-coral mb-6">Featured Stories</h2>
+  //       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+  //         {stories.map((story) => (
+  //           <div
+  //             key={story.id}
+  //             className="bg-white rounded-2xl shadow-md overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg group"
+  //           >
+  //             <img
+  //               src={story.image}
+  //               alt={story.title}
+  //               className="w-full h-48 object-cover"
+  //             />
+  //             <div className="p-4">
+  //               <h3 className="font-headline text-lg text-charcoal mb-2">{story.title}</h3>
+  //               <p className="text-sm text-gray-700 font-body">
+  //                 {story.snippet}
+  //               </p>
+  //               <div className="text-coral mt-3 opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold cursor-pointer">
+  //                 Read More →
+  //               </div>
+  //             </div>
+  //           </div>
+  //         ))}
+  //       </div>
+  //     </section>
+  //   );
+  // }
   
